@@ -11,6 +11,7 @@
     border: 60px solid red;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 25px;
 }
 
 h1 {
