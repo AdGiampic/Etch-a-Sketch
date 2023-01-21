@@ -6,8 +6,8 @@
 }
 
 #board{
-    height: 760px;
-    width: 760px;
+    height: 672px;
+    width: 672px;
     border: 60px solid red;
     display: flex;
     flex-wrap: wrap;
