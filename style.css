@@ -6,9 +6,11 @@
 }
 
 #board{
-    height: 800px;
-    width: 800px;
+    height: 760px;
+    width: 760px;
     border: 60px solid red;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h1 {
