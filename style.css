@@ -1,0 +1,20 @@
+#main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board{
+    height: 800px;
+    width: 800px;
+    border: 60px solid red;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p{
+    font-size: 24px;
+}
