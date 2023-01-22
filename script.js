@@ -9,15 +9,31 @@ function createGrid16 () {
 
 createGrid16();
 
-const color = document.querySelectorAll('.paint') // select every single item
-color.forEach ((item) => { // cycle through the items
-    item.addEventListener('mouseover' ,() => { // for each item I add a click event
-        item.style.background = "black"
+function paintBlack () {
+    const color = document.querySelectorAll('.paint') // select every single item
+    color.forEach ((item) => { // cycle through the items
+        item.addEventListener('mouseover' ,() => { // for each item I add a click event
+            item.style.background = "black"
+        })
     })
-})
+}
+
+paintBlack()
 
 function clearAll () {
     // convert the node list into an array
     Array.from(document.querySelectorAll('.paint'))
     .forEach((element) => element.style.background = 'white') //each element has white background
+}
+
+function paintRandom () {
+    const color = document.querySelectorAll('.paint') // select every single item
+    color.forEach ((item) => { // cycle through the items
+        item.addEventListener('mouseover' ,() => { // for each item I add a click event
+            let R = Math.floor(Math.random() * 256); //red
+            let G = Math.floor(Math.random() * 256); // green
+            let B = Math.floor(Math.random() * 256); // blue
+            item.style.background = "rgb(" + R + "," + G + "," + B + ")"
+        })
+    })
 }
