@@ -16,3 +16,8 @@ color.forEach ((item) => { // cycle through the items
     })
 })
 
+function clearAll () {
+    // convert the node list into an array
+    Array.from(document.querySelectorAll('.paint'))
+    .forEach((element) => element.style.background = 'white') //each element has white background
+}
