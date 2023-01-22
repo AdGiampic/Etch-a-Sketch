@@ -11,13 +11,15 @@
 <body>
     <div id = "main">
         <h1>Etch-a-Sketch</h1>
-        <p>Hover your mouse to color the board.</p>
+        <p id = "description">Hover your mouse to color the board.</p>
+        <p>Use the menu below to edit the settings.</p>
         <div id = "board">
         </div>
         <div id = "buttons">
             <button class ="btn" onclick=clearAll()>Clear</button>
             <button class = "btn" onclick=paintRandom()>Randomize</button>
             <button class = "btn" onclick=newGrid()>Change grid</button>
+            <button class = "btn" onclick=createGrid16()>Default grid</button>
         </div>
     </div>
 </body>
