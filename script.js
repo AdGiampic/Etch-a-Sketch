@@ -1,6 +1,7 @@
 function createGrid16 () {
     const divGrid = document.createElement('div'); // create square
-    divGrid.setAttribute('style', 'border: 1px solid gray; width:40px; height: 40px'); // square has style
+    const styleCss = 'border: 1px solid gray; width:40px; height: 40px ; background-color: white' // square has style
+    divGrid.setAttribute('style', styleCss); 
     divGrid.setAttribute('class', 'paint')
     for (let i = 1;i<=256; i++) { //test create square 5 times
         document.getElementById('board').appendChild(divGrid.cloneNode(true));
@@ -42,12 +43,24 @@ function newGrid () {
     Array.from(document.querySelectorAll('.paint')) 
     .forEach((item => item.remove())) //removes the current grid
     const newGrid = document.createElement('div');
-    let gridSize = 4 // prompt from 2 to 96
-    let sq = 672 / gridSize
-    let newStyle = 'border: 1px solid gray; width:' + sq + 'px; height: ' + sq + 'px'
+    let gridSize = prompt ("Pick a number between 2 to 96 to adjust grid size") // prompt from 2 to 96
+    if (gridSize === null) { // if nothing was picked use default value
+        gridSize = 16;
+    }
+    if (gridSize < 2 && gridSize > 96) {
+        throw new Error ('Number too small or high')
+    }
+    /*
+    if (typeof 'gridSize' !== number) {
+        throw new Error ('Please pick a number')
+    }
+    */
+    let sq = (672 / gridSize) - 2
+    let newStyle = 'border: 1px solid gray; width:' + sq + 'px; height: ' + sq + 'px ; background-color: white'
     newGrid.setAttribute('style', newStyle);
     newGrid.setAttribute('class', 'paint')
-    for (let i = 1;i<=gridSize; i++) { //test create square 5 times
+    for (let i = 1;i<=gridSize*gridSize; i++) { //test create square 5 times
         document.getElementById('board').appendChild(newGrid.cloneNode(true));
     }
+    paintBlack();
 }
