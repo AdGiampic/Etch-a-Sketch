@@ -37,3 +37,17 @@ function paintRandom () {
         })
     })
 }
+
+function newGrid () {
+    Array.from(document.querySelectorAll('.paint')) 
+    .forEach((item => item.remove())) //removes the current grid
+    const newGrid = document.createElement('div');
+    let gridSize = 4 // prompt from 2 to 96
+    let sq = 672 / gridSize
+    let newStyle = 'border: 1px solid gray; width:' + sq + 'px; height: ' + sq + 'px'
+    newGrid.setAttribute('style', newStyle);
+    newGrid.setAttribute('class', 'paint')
+    for (let i = 1;i<=gridSize; i++) { //test create square 5 times
+        document.getElementById('board').appendChild(newGrid.cloneNode(true));
+    }
+}

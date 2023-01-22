@@ -6,6 +6,7 @@
 }
 
 #board{
+    
     height: 672px;
     width: 672px;
     border: 60px solid red;
